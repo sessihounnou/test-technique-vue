@@ -11,11 +11,11 @@
               <div class="h-2 bg-primary rounded-t-md"></div>
               <div class="px-8 py-6 ">
                 <label class="block font-semibold pt-2"> Nom de l'animal </label>
-                <input type="text" id="name" placeholder="Nom de l'animal" :value="current_animal.name" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
+                <input type="text" ref="name" placeholder="Nom de l'animal" :value="current_animal.name" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
                 <label class="block mt-3 font-semibold"> Age de l'animal </label>
-                <input type="number" id="age" placeholder="l'age de l'animal" :value="current_animal.age" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
+                <input type="number" ref="age" placeholder="l'age de l'animal" :value="current_animal.age" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
                 <label class="block font-semibold py-2 "> Espece de l'animal</label>
-                <select  id="species" :value="current_animal.species" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                <select  ref="species" :value="current_animal.species" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                   <option selected>Selectionnez une espece</option>
                   <option value="Chat">Chat</option>
                   <option value="Chien">Chien</option>
@@ -25,10 +25,10 @@
 
                 <div class="flex justify-between">
                   <div>
-                    <input type="date" id="date" class="mt-2 border w-full px-3 py-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
+                    <input type="date" ref="date" class="mt-2 border w-full px-3 py-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
                   </div>
                   <div>
-                    <select  id="rdvtype" class="mt-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                    <select  ref="rdvtype" class="mt-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                       <option selected>Type de rdv</option>
                       <option value="controle" selected>Contrôle</option>
                       <option value="blessure">Blessure</option>
@@ -90,12 +90,13 @@ export default {
   methods: {
 
     onSave() {
-      this.name =document.getElementById('name').value ? document.getElementById('name').value : this.name
-      this.age =document.getElementById('age').value  ? document.getElementById('age').value  : this.age
-      this.species =document.getElementById('species').value ? document.getElementById('species').value : this.species
-      this.rdvdate =document.getElementById('date').value ? document.getElementById('date').value : this.rdvdate
-      this.rdvtype  =document.getElementById('rdvtype' ).value ?  document.getElementById('rdvtype' ).value : this.rdvtype 
-
+      this.name =this.$refs.name.value ? this.$refs.name.value : this.name
+      this.age =this.$refs.age.value  ? this.$refs.age.value  : this.age
+      this.species =this.$refs.species.value ? this.$refs.species.value : this.species
+      this.rdvdate =this.$refs.date.value ? this.$refs.date.value : this.rdvdate
+      // this.rdvtype  =this.$refs.rdvtypee.value ?  this.$refs.rdvtypee.value : this.rdvtype 
+      // eslint-disable-next-line no-console
+      console.log(this.name);
       this.animal = {
       name : this.name, 
       age : this.age,
