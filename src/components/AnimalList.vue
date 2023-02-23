@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 gap-4" >
+  <div class="sm:grid sm:grid-cols-2 sm:gap-4" >
       <!-- <p class="instructions">
           // TODO: utiliser display: grid pour afficher 2 animal-card sur chaque ligne
       </p>

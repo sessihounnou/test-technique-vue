@@ -6,8 +6,8 @@
 
     <br />
     <p class="instructions">
-      // TODO Ajouter les informations du dernier RDV chez le vétérinaire via un
-      modèle AppointementModel dans le store
+      <!-- // TODO Ajouter les informations du dernier RDV chez le vétérinaire via un
+      modèle AppointementModel dans le store -->
     </p>
     <ul class="instructions">
       <li>Date du rdv: Date</li>

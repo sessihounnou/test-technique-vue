@@ -1,9 +1,9 @@
 <template>
         <div
-        class="w-[80%] mt-2 mx-8 flex justify-between py-2  bg-white/30  shadow-sm shadow-black-500/40 hover:shadow-md hover:shadow-primary"
+        class="w-[80%] mt-2 mx-8 sm:flex justify-between py-2  bg-white/30 shadow-sm shadow-primary  sm:shadow-sm sm:shadow-black-500/40 hover:sm:shadow-md hover:sm:shadow-primary"
       >
-        <div class="flex items-center space-x-4 px-12">
-          <div class=" flex flex-col my-16 ">
+        <div class="sm:flex sm:items-center sm:space-x-4 px-12">
+          <div class=" sm:flex sm:flex-col my-16 ">
             <animal-input v-if="isEditMode" @save="isEditMode = false " :current_animal="animal" :index="index" />
             <animal-info v-else :animal="animal" @edit="isEditMode = true" />
           </div>
