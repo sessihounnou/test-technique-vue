@@ -94,7 +94,7 @@ export default {
       this.age =this.$refs.age.value  ? this.$refs.age.value  : this.age
       this.species =this.$refs.species.value ? this.$refs.species.value : this.species
       this.rdvdate =this.$refs.date.value ? this.$refs.date.value : this.rdvdate
-      // this.rdvtype  =this.$refs.rdvtypee.value ?  this.$refs.rdvtypee.value : this.rdvtype 
+      this.rdvtype  =this.$refs.rdvtype.value ?  this.$refs.rdvtype.value : this.rdvtype 
       // eslint-disable-next-line no-console
       console.log(this.name);
       this.animal = {
@@ -107,6 +107,7 @@ export default {
       //   rdvtype : this.rdvtype ,
       // }
       let animals = [];
+      // let appointement =[];s
       // eslint-disable-next-line no-console
       console.log(this.index)
       animals.push(this.index)
@@ -114,7 +115,7 @@ export default {
       // eslint-disable-next-line no-console
       console.log(this.animal);
       this.$store.dispatch('animals/setUniqueAnimals', animals )
-      // this.$store.dispatch('appointement/initializeAppointement', appointement )
+      this.$store.dispatch('appointement/initializeAppointement')
       // eslint-disable-next-line no-console
       console.log(this.animal);
       this.$emit('save')

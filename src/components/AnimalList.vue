@@ -6,7 +6,8 @@
       <p class="instructions">          
           // TODO: afficher un message temporaire (text qui disparait) lorsqu'un animal est mis à jour pour confirmer la sauvegarde
       </p> -->
-    <animal-card v-for="(animal, index ) in animals" :key="animal.id" :animal="animal" :index="index" />
+    <animal-card v-for="(animal, index ) in animals" :key="animal.id" :animal="animal" :appointement="appointement" :index="index" />
+
   </div>
   
 </template>
@@ -19,6 +20,9 @@ export default {
   computed: {
     animals: function () {
       return this.$store.getters['animals/getAllAnimals']
+    },
+    appointement: function (){
+      return this.$store.getters['appointement/getAllAppointement'][0]
     }
   }
 

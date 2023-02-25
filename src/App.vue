@@ -13,10 +13,21 @@ export default {
   components: {
     AnimalList
   },
+
   created() {
+
+    // eslint-disable-next-line no-console
     this.$store.dispatch('animals/initializeAnimals')
-    this.$store.dispatch('appointement/initializeAppointement')
-  }
+  .then(() => {
+
+    const animal_id= this.$store.getters['animals/getAllAnimals']
+    
+    this.$store.dispatch('appointement/initializeAppointement',animal_id)
+
+
+    
+  })
+  } 
 }
 </script>
 

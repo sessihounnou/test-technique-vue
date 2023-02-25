@@ -4,8 +4,8 @@
       >
         <div class="sm:flex sm:items-center sm:space-x-4 px-12">
           <div class=" sm:flex sm:flex-col my-16 ">
-            <animal-input v-if="isEditMode" @save="isEditMode = false " :current_animal="animal" :index="index" />
-            <animal-info v-else :animal="animal" @edit="isEditMode = true" />
+            <animal-input v-if="isEditMode" @save="isEditMode = false " :current_animal="animal" :appointement="appointement" :index="index" />
+            <animal-info v-else :animal="animal" :appointement="appointement"  :index="index" @edit="isEditMode = true" />
           </div>
         </div>
       </div>
@@ -20,6 +20,9 @@ export default {
   components: { AnimalInfo, AnimalInput },
   props: {
     animal: {
+      required: true
+    },
+    appointement: {
       required: true
     },
     index: {
